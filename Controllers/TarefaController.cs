@@ -37,7 +37,7 @@ namespace TrilhaApiDesafio.Controllers
         {
             List<Tarefa> tarefas = _context.Tarefas.Where(tarefa => tarefa.Titulo.Contains(titulo)).ToList<Tarefa>();
 
-            return Ok();
+            return Ok(tarefas);
         }
 
         [HttpGet("ObterPorData")]
@@ -85,7 +85,7 @@ namespace TrilhaApiDesafio.Controllers
             _context.Update(tarefaBanco);
             _context.SaveChanges();
 
-            return Ok();
+            return Ok(tarefa);
         }
 
         [HttpDelete("{id}")]
